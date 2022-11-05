@@ -1,6 +1,15 @@
 let searchElement = document.querySelector("#filterJob");
 
-searchElement.addEventListener("keypress", getResume);
+var p= document.querySelector("#prev");
+var n= document.querySelector("#next");
+
+searchElement.addEventListener("keypress", setJobApplied);
+
+function setJobApplied(e) {
+    if (e.keyCode == 13) {
+        getResume()
+    }
+}
 
 function getResume(){
 
@@ -8,9 +17,17 @@ fetch("Data.json")
         .then(response => response.json())
         .then(data => {
             for (var i = 0; i<data.resume.length; i++){
+                if (i==6){
+                    p.style.display = "block";
+                }
+                if(i==1){
+                    p.style.display = "none";
+                }
 
                 let jobApplied = data.resume[i].basics.AppliedFor;
-                if(searchElement.value=jobApplied){
+                
+                
+                if(searchElement.value==jobApplied){
 
                     let id = data.resume[i].id;
                     let name = data.resume[i].basics.name;
@@ -46,6 +63,8 @@ fetch("Data.json")
                     let scgpa = data.resume[i].education["Senior Secondary"].cgpa;
                     let asummary = data.resume[i].achievements.Summary;
                     let hobbies = data.resume[i].interests.hobbies;
+                    document.querySelector("#fname").innerHTML += `${name}`;
+                    document.querySelector("#designation").innerHTML += `${jobApplied}`;
                     document.querySelector("#tb1").innerHTML += `
                     <tr>
                         <td>${id}</td>
@@ -84,8 +103,13 @@ fetch("Data.json")
                         <td>${hobbies}</td>
 
                     </tr>`;
-                    document.querySelector("#name").innerHTML += `${name}`;
+                   
+                    
+                    
 
+                }
+                else{
+                    document.querySelector("#noRecord").innerHTML= "Invalid Search!"
                 }
            
             }
