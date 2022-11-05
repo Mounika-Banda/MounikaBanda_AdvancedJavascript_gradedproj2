@@ -13,38 +13,45 @@
 
     <br>
     <center>
+
+        <a id="prev" onclick="plusSlides(-1)">Prev</a>
         <input type="text" id="filterJob" placeholder="search for keywords to filter the result">
-        <input type="submit" class="center" value="Next">
+        <a id="next" onclick="plusSlides(1)">Next</a>
+        
+      
+      
     </center>
     <br>
 
     <main id="main-holder">
 
     <form id="resume-form">
-        <header class="header1"> Mounika Banda</header>
-        <div id="name"></div>
-       
-        <br>
-        Applied for RPA Developer
-    </header>
 
     <div>
-        <section id="leftBlock">
-            <p>Test</p>
-
-        </section>
     </div>
 
-                <table id = "tb1" border = "1">
-                    <tr>
-                        <th>movieID</th>
-                        <th>title</th>
-                        <th>poster</th>
-                    </tr>
-                </table>
-            
-            </div>
-            </div>
+                <div id="ResumeContent">
+                    <header class="header1">
+                        <h1 id="fname"></h1>
+                        
+                        <div id="designation">
+                        
+                            Applied For: 
+                        
+                        </div>
+                    
+                    </header>
+
+                    <table id = "tb1" border = "1">
+                        <tr>
+                            <th>movieID</th>
+                            <th>title</th>
+                            <th>poster</th>
+                        </tr>
+                    </table>
+
+                </div>
+        <div id="noRecord"></div>
             
     </form>
         
