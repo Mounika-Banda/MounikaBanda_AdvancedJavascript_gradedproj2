@@ -1,63 +1,137 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title></title>
-	<link rel="stylesheet" href="./Resume.css">
-    <script defer src="./Resume.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="./resume.js"></script>
+    
+    <link rel="stylesheet" href="resume.css">
+ 
+    <title>Resume</title>
 </head>
+
 <body>
+    <div class="container">
 
-<div class="resume-main">
+        <!-- Search Bar Div-->
+        <div class="searchBar">
+            <button class="previous">Previous</button>
+            <input type="text" name="searchWord" id="searchInput"
+                placeholder="Enter keywords to filter through resumes" />
+            <button class="next">Next</button>
+        </div>
 
-    <br>
-    <center>
+        <!-- Resume container Div-->
+        <div class="resume-container">
 
-        <a id="prev" onclick="plusSlides(-1)">Prev</a>
-        <input type="text" id="filterJob" placeholder="search for keywords to filter the result">
-        <a id="next" onclick="plusSlides(1)">Next</a>
-        
-      
-      
-    </center>
-    <br>
-
-    <main id="main-holder">
-
-    <form id="resume-form">
-
-    <div>
-    </div>
-
-                <div id="ResumeContent">
-                    <header class="header1">
-                        <h1 id="fname"></h1>
-                        
-                        <div id="designation">
-                        
-                            Applied For: 
-                        
-                        </div>
-                    
-                    </header>
-
-                    <table id = "tb1" border = "1">
-                        <tr>
-                            <th>movieID</th>
-                            <th>title</th>
-                            <th>poster</th>
-                        </tr>
-                    </table>
-
-                </div>
-        <div id="noRecord"></div>
+            <!-- This div will be loaded when search 
+                result has nothing to show-->
+            <div class="searchResultNegative"> </div>
             
-    </form>
-        
-    </main>
-	
-</div>
+            <!-- load this div when there is searchResult or API response-->
+            <div class="searchResultPositive">
+                <div class="resumeHead">
+                    <div class="nameDiv">
+                        <h2 class="candidateName"></h2>
+                        <label class="appliedFor"></label>
+                    </div>
+                    <div class="imageDiv">
+                        <img src="https://i.postimg.cc/8kXX8wtZ/profile-Img.png" class="profileImage" alt="profile" />
+                    </div>
+                </div>
+
+                <div class="resumeBody">
+                    <div class="sideBar">
+                        <aside>
+                            <h4 class="head">Personal Information</h4>
+                            <p class="phone">97478965989</p>
+                            <p class="email">email</p>
+                            <p><a href="linkedIn" class="network">linkedin</a></p>
+                            <h4 class="head">Technical Skills</h4>
+                            <p class="tech"></p>
+                            <h4 class="head">Hobbies</h4>
+                            <p class="hobbies"></p>
+                        </aside>
+                    </div>
+
+                    <div class="resumeDetails">
+                        <h3>Work experience in previous company</h3>
+                        <div>
+                            <div class="col-xs-6 detail "><b>Company Name : </b>
+                                <p class="company"></p>
+                            </div>
+                            <div class="col-xs-6 detail "><b>Position : </b>
+                                <p class="position"></p>
+                            </div>
+                            <div class="col-xs-6 detail "><b>Start Date : </b>
+                                <p class="start"></p>
+                            </div>
+                            <div class="col-xs-6 detail "><b>End Date : </b>
+                                <p class="end"></p>
+                            </div>
+                            <div class="col-xs-6 detail "><b>Summary : </b>
+                                <p class="summary"></p>
+                            </div>
+                        </div>
+
+                        <h3>Projects</h3>
+                        <div>
+                            <div class="col-xs-6 detail project"><b class="projName"></b>:<p class="projDesc"></p>
+                            </div>
+                        </div>
+
+                        <h3>Education</h3>
+                        <div>
+                            <ul>
+                                <li class="col-xs-6 detail"><b>UG :</b>
+                                    <p class="ug"></p>
+                                </li>
+                                <li class="col-xs-6 detail"><b>PU :</b>
+                                    <p class="pu"></p>
+                                </li>
+                                <li class="col-xs-6 detail"><b>High School :</b>
+                                    <p class="school"></p>
+                                </li>
+                            </ul>
+                        </div>
+                        <h3>Internship</h3>
+                        <div>
+                            <ul>
+                                <li class="col-xs-6 detail "><b>Company Name : </b>
+                                    <p class="internCompany"></p>
+                                </li>
+                                <li class="col-xs-6 detail "><b>Position : </b>
+                                    <p class="internPosition"></p>
+                                </li>
+                                <li class="col-xs-6 detail "><b>Start Date : </b>
+                                    <p class="internStartDate"></p>
+                                </li>
+                                <li class="col-xs-6 detail "><b>End Date : </b>
+                                    <p class="internEndDate"></p>
+                                </li>
+                                <li class="col-xs-6 detail "><b>Summary : </b>
+                                    <p class="internSummary"></p>
+                                </li>
+                            </ul>
+                        </div>
+                        <h3>Achievements</h3>
+                        <div>
+                            <ul>
+                                <li class="detail">
+                                    <p class="achievements"></p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 </body>
+
 </html>
