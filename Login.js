@@ -9,7 +9,7 @@ loginButton.addEventListener("click", (e) => {
 
     if (username === "mounika" && password === "Assignment") {
         alert("You have successfully logged in.");
-        location.href = "http://127.0.0.1:5500/Resume.html";
+        location.href = "http://127.0.0.1:5500/resume.html";
         
     } else {
         loginErrorMsg.style.opacity = 1;
